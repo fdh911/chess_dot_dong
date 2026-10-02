@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: verdana;
+    box-sizing: border-box;
 }
 
 body {
@@ -22,24 +23,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
-    padding: 10vh;
+    height: 90vh;
+    padding: 5vh;
 }
 
 #board {
     height: 100%;
     text-align: center;
     margin: 1em;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    aspect-ratio: 1;
+}
+
+.square {
+    background: #eeeeee
+}
+
+.square:nth-child(16n+2),
+.square:nth-child(16n+4),
+.square:nth-child(16n+6),
+.square:nth-child(16n+8),
+.square:nth-child(16n+9),
+.square:nth-child(16n+11),
+.square:nth-child(16n+13),
+.square:nth-child(16n+15) {
+    background: #648374
 }
 
 #board img {
     width: auto;
     height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 #info {
     background-color: #333333;
-    height: calc(100% - 2em);
+    width: 20vw;
+    height: 100%;
     padding: 1em;
     margin: 1em;
 }
