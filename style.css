@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: verdana;
+}
+
+body {
+    background-color: #111111;
+    height: 100vh;
+}
+
+#top_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    color: white;
+    height: 10vh;
+}
+
+#outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    padding: 10vh;
+}
+
+#board {
+    height: 100%;
+    text-align: center;
+    margin: 1em;
+}
+
+#board img {
+    width: auto;
+    height: 100%;
+}
+
+#info {
+    background-color: #333333;
+    height: calc(100% - 2em);
+    padding: 1em;
+    margin: 1em;
+}
