@@ -1,30 +1,19 @@
-const squaresMap = new Map()
-
 setup()
 
 function setup() {
-    const allSquares = document.querySelectorAll('.square')
+    const c = document.getElementById("board")
+    const ctx = c.getContext("2d")
 
-    if(allSquares.length !== 64) {
-        console.error('Could not get all 64 board squares')
-        return
-    }
+    c.addEventListener('click', ev => {
+        console.log('clicked on ' + detClickedSquare(c.clientWidth, c.clientHeight, ev.offsetX, ev.offsetY))
+    })
 
-    let i = 0
+    ctx.fillRect(0, 0, c.clientWidth, c.clientHeight)
+}
 
-    for(let row of '87654321') {
-        for(let col of 'abcdefgh') {
-            let pos = col + row
-            let sq = allSquares[i]
-            squaresMap.set(pos, sq)
-            squaresMap.set(sq, pos)
-            i++
-        }
-    }
-
-    for(let s of allSquares) {
-        s.addEventListener('click', sq => {
-            console.log(`${squaresMap.get(sq.target)} got lowkey clicked`)
-        })
-    }
+function detClickedSquare(w, h, cx, cy) {
+    cy = h - cy
+    row = 65 + Math.min(Math.floor((cx / w) * 8), 7)
+    col = 48 + Math.min(Math.floor((cy / h) * 8), 7) + 1
+    return String.fromCharCode(row, col)
 }
