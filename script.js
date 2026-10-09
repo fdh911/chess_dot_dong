@@ -6,7 +6,7 @@ let selectedSquare = null
 setup()
 
 function setup() {
-    const allSquares = document.querySelectorAll('.square')
+    allSquares = document.querySelectorAll('.square')
 
     if(allSquares.length !== 64) {
         console.error('Could not get all 64 board squares')
